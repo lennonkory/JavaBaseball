@@ -27,5 +27,12 @@ public class BatterStat extends Stat {
 	public void setHomeruns(int homeruns) {
 		this.homeruns = homeruns;
 	}
+
+	@Override
+	public String toString() {
+		return "BatterStat ["+ super.toString() +" homeruns=" + homeruns + "]";
+	}
+	
+	
 	
 }

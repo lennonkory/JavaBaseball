@@ -22,5 +22,11 @@ public class PitcherStat extends Stat{
 	public void setStrikeouts(int strikeouts) {
 		this.strikeouts = strikeouts;
 	}
+
+	@Override
+	public String toString() {
+		return "PitcherStat ["+ super.toString() +" strikeouts=" + strikeouts + "]";
+	}
+	
 	
 }

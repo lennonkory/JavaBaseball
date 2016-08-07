@@ -35,9 +35,16 @@ public class Start {
 		player.addStat(pstat);
 		player.addStat(stat);
 		
+		pstat.setPlayer(player);
+		stat.setPlayer(player);
+		
 		playerService.createPlayer(player);
 		
+		StatService statService = context.getBean(StatService.class);
 		
+		Stat s = statService.findStatById(2L);
+		
+		System.out.println(s.toString());
 
 	}
 

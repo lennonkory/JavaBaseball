@@ -10,6 +10,7 @@ public interface StatService {
 	
 	boolean createStat(Stat stat);
 	List<Stat> findByPlayer(Player player);
+	Stat findStatById(Long id);
 	public StatDAO getStatDao();
 	public void setStatDAO(StatDAO statDAO);
 

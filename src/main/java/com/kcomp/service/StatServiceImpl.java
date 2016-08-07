@@ -27,6 +27,10 @@ public  class StatServiceImpl implements StatService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Stat findStatById(Long id){
+		return statDAO.findById(id);
+	}
 
 	public StatDAO getStatDao() {
 		return this.statDAO;

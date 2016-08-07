@@ -23,10 +23,13 @@ public class Player extends EntityModel{
 	private String lastName;
 	
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,targetEntity = Stat.class)
-	@JoinColumn (name = "stat_id")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "player")
 	List<Stat> stats = new ArrayList<>();//fix
 
+	@Override
+	public String toString() {
+		return "Player [firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
 	public List<Stat> getStats() {
 		return stats;
 	}

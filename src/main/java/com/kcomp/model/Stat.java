@@ -1,13 +1,17 @@
 package com.kcomp.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "stat")
 public abstract class Stat extends EntityModel{
 
 	/**
@@ -18,7 +22,7 @@ public abstract class Stat extends EntityModel{
 
 	
 	@ManyToOne
-	@JoinColumn (name = "player_id")
+	@JoinColumn (name = "playerId")
 	private Player player;
 	
 	public Player getPlayer() {
@@ -37,10 +41,9 @@ public abstract class Stat extends EntityModel{
 		this.team = team;
 	}
 
-
-	
-	
-
-	
+	@Override
+	public String toString() {
+		return "Stat [team=" + team + ", player=" + player + "]";
+	}	
 	
 }
